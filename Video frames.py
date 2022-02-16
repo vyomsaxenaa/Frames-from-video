@@ -1,4 +1,3 @@
-# Problem 1: No import packages
 import cv2
 #To read the Video
 cap=cv2.VideoCapture("sid concert.mpg")
