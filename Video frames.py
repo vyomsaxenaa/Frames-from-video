@@ -1,14 +1,13 @@
 import cv2
-#To read the Video
-cap=cv2.VideoCapture("sid concert.mpg")
-ret, frame=cap.read()
 count=0
 while(True):
     #To read the frames
     ret, frame=cap.read()
     print("read a new frame:",frame)
     # To capture frame at specific time
-    if(count%30==0):
+    fps=cap.get(cv2.CAP_PROP_FPS)
+    time=fps*5
+    if(count%time==0):
         cv2.imwrite("frame%d.jpg"%count,frame)
     count+=1
     # To stop the Iteration 
