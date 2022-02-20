@@ -1,4 +1,5 @@
 import cv2
+cap=cv2.VideoCapture("sid concert.mpg")
 count=0
 while(True):
     #To read the frames
