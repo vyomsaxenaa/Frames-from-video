@@ -1,17 +1,11 @@
 import cv2
 import os
-#path="sid concert.mpg"
-path="C:/Users/Sid/Desktop/Vyom's Python/Video Sample/"
+path="sid concert.mpg"
 face_cascade=cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
-#cap=cv2.VideoCapture(path)
+cap=cv2.VideoCapture(path)
 #read  video frame
-#def video_read(path):
-#    cap=cv2.VideoCapture(path)
- #   ret,frame=cap.read()
-  #  return frame
-
-def video_read(file):
-    cap=cv2.VideoCapture(file)
+def video_read(path):
+    cap=cv2.VideoCapture(path)
     ret,frame=cap.read()
     return frame
 
@@ -30,11 +24,6 @@ def frame_specific_time(sec,frame):
         cv2.imwrite("frame%d.jpg"%count,frame)
     count+=1
     return frame
-
-for file in os.listdir(path):
-    if file.endswith(".mp4"):
-        loc=os.path.join(path,file)
-        video_read(loc)
 
 
    
